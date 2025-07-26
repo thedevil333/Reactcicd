@@ -1,42 +1,49 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* App.css
+  This file contains custom CSS that works alongside Tailwind CSS.
+  It's used for animations and complex styles that are cleaner to write in plain CSS.
+*/
+
+/* Animated gradient for the hero section background */
+@keyframes gradient-x {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 15s ease infinite;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* 3D Transform styles for the flipping game cards */
+.perspective-1000 {
+    perspective: 1000px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.transform-style-3d {
+    transform-style: preserve-3d;
 }
 
-.card {
-  padding: 2em;
+.rotate-y-180 {
+    transform: rotateY(180deg);
 }
 
-.read-the-docs {
-  color: #888;
+.backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* For Safari */
+}
+
+
+/* Utility to hide scrollbars */
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
